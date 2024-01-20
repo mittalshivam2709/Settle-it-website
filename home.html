@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/6cfb2cc004.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/home.css') }}">
+</head>
+<body>
+	<div class="navbar" style="z-index: 5;">
+		<a href="{{url_for('account')}}" id="pla" align="right"><i class="fa-solid fa-user"></i><span class="small">Account</span></a>
+		<a href="{{url_for('groups')}}" id="pla" align="right"><i class="fa-solid fa-user-group"></i><span class="small">Groups</span></a>
+		<a href="{{url_for('friends')}}" id="pla" align="right" ><i class="fa-solid fa-people-arrows"></i><span class="small"> Friends</span></a>
+		<a href="{{url_for('expense')}}" id="pla" align="right"><i class="fa-solid fa-receipt"></i><span class="small">  Add Expense</span></a>
+		<a href="{{url_for('home')}}" id="pla" align="right" ><i class="fa-solid fa-house" style="color:#ada7ef"></i><span class="small"> Home</span></a>	
+		</div>
+	<div class="main" id="section1">
+	<div class="container">
+		<img src="{{ url_for('static', filename='/SETTLEIT.png') }}" style="width:100%">
+	  </div>
+	<br></br>
+	
+<div class="buttons">
+	<a href="#section2"><button class="btn">About Us</button></a>
+
+	<a href="#section3"><button class="btn2">Meet the Creators</button></a>
+</div>
+  </div>
+  
+  <div class="main" id="section2">
+	<h2></h2>
+	<br></br>
+	<br></br>
+	<div class="main2">
+	<div class="cnt" style="margin-top: 0%;">
+	<h2 style=" margin-left: 1%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: blueviolet;">About Us</h2>
+	<p style="margin-left: 1%; font-size: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">SETTLE IT is a
+	site for one of the most common problems today - splitting money.<br> In the age of digital payment,
+	it has become more and more common for transactions, <br>especially between groups of people, to occur online.
+	Which begs the question - <br> how will that money be settled?<br><br> That is where SETTLE IT comes in.<br><br>
+	<br> SETTLE IT offers ease of convenience and a smooth platform through which adults<br> can easily perform
+	even the most complicated transactions without worry.</p>
+	<a href="#section3"><button class="btn3">Meet the Creators</button></a>	
+</div>
+	<div class="container2" style="margin-top: 1%;"><img></div>
+</div>
+	
+  </div>
+
+  <div class="main" id="section3">
+	 <!--
+	<div class="ripple-background">
+  <div class="circle xxlarge shade1"></div>
+  <div class="circle xlarge shade2"></div>
+  <div class="circle large shade3"></div>
+  <div class="circle medium shade4"></div>
+  <div class="circle small2 shade5"></div>
+</div>
+-->
+	<h2></h2>
+	<br></br>
+	<h2 style=" margin-top:5%; margin-left: 1%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: blueviolet;">Meet the Creators</h2>
+	<div class="cnt3" style="margin-left: 10%;">
+		<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><br><br><br>Akshada Kulkarni<br> akshadamkulkarni@gmail.com</p>
+		
+		<img class="memimg" style="height: 200px; width: 200px; margin-left: 40%;  border:2px solid white;" src="{{ url_for('static', filename='/akshada.jpg') }}">
+	
+	</div>
+	<div class="cnt3" style="margin-left: 5%;">
+		<img  class="memimg" class="memimg"style="height: 200px; width: 200px;  border:2px solid white;" src="{{ url_for('static', filename='/rohan.jpg') }}">
+		<p style="  margin-left: 20%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><br><br><br>Rohan Shridhar<br> rohanshridhar@yahoo.co.in</p>
+		</div>
+
+	<div class="cnt3" style="margin-left: 10%; ">
+		<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><br><br><br>Shivam Mittal<br> mittalshivam279@gmail.com</p>
+		<img class="memimg" style="height: 200px; width: 200px; margin-left: 40%; border:2px solid white;" src="{{ url_for('static', filename='/shivam.jpg') }}">
+	</div>
+
+  </div>
+  <div class="main" id="section4">
+	<br>
+	<br>
+	<br>
+	<div class="cnt4">
+	<div class="cards-container">
+        <div class="card_outer">
+            <div class="card_img1">
+                <div class="img1">
+                </div>
+            </div>
+            <div class="card_content">
+                Picture this: &ensp; A friend's birthday is nearing, and through a group text, your other friends
+				 decide to host a swanky dinner, give a generous group gift  and evenly split the cost - <br><br>
+				 but you're late to the chat and can't afford the gift, especially amid inflation. Do you . . .
+                <button class="button2" onclick=" window.open('https://newsroom.paypal-corp.com/2022-07-21-Bill-Splitting-Doesnt-Need-to-Be-Awkward','_blank')" align="center" >Read More</button>
+            </div>
+        </div>
+        <div class="card_outer">
+            <div class="card_img2">
+                <div class="img2">
+                </div>
+            </div>
+            <div class="card_content">
+                Within any group of friends who dine out together, people likely have different budgets, 
+				different appetites and different attitudes toward shared expenses.
+				<br><br>
+				You may be one of those people who, for the sake of expediency, is happy for everyone to 
+				split things evenly. . . 
+                <button class="button2" onclick=" window.open('https://www.cnbc.com/2022/11/13/etiquette-experts-best-way-to-split-the-bill.html','_blank')" align="center" >Read More</button>
+            </div>
+            
+                
+            </div>
+
+        <div class="card_outer">
+            <div class="card_img3">
+                <div class="img3">
+  
+                </div>
+            </div>
+            <div class="card_content">
+                A discussion blew up last week on Good Morning Britain about whether or not you should 
+				split the bill with friends while eating out, prompted by an article in which a journalist
+				 said her friendship group was almost “destroyed” after using a bill-splitting app on a 
+				 group holiday.<br><br> While there is no rulebook . . .<br>
+                <button class="button2" onclick=" window.open('https://inews.co.uk/opinion/how-learn-friends-way-split-bill-2310049','_blank')" align="center" >Read More</button>
+            </div>
+        </div>
+        </div>
+
+  </div>
+</div>
+<div class="main" id="section5">
+</div>
+  
+<script src="{{ url_for('static', filename='/home.js') }}"></script>
+</body>
+</html>

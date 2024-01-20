@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/groups.css') }}">
+	<script src="https://kit.fontawesome.com/6cfb2cc004.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+	 </div>
+	<div class="navbar"  style="z-index: 5;">
+		<a href="{{url_for('account')}}" id="pla" align="right"><i class="fa-solid fa-user"></i><span class="small">Account</span></a>
+		<a href="{{url_for('groups')}}" id="pla" align="right" style="color:#ada7ef"><i class="fa-solid fa-user-group"></i><span class="small">Groups</span></a>
+		<a href="{{url_for('friends')}}" id="pla" align="right" ><i class="fa-solid fa-people-arrows"></i><span class="small"> Friends</span></a>
+		<a href="{{url_for('expense')}}" id="pla" align="right"><i class="fa-solid fa-receipt"></i><span class="small">  Add Expense</span></a>
+		<a href="{{url_for('home')}}" id="pla" align="right" ><i class="fa-solid fa-house"></i><span class="small"> Home</span></a>	
+	</div>	
+	<div class="container">
+		<div>
+		<h4>Overall, you owe <span class="red">$ {{ total }}</span>.</h4>
+		<table>
+			<thead>
+				
+			<tbody>
+                {% for row in result %}    
+                <tr>
+					<td><i class="fa-solid fa-coins fa-lg"></i></td>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+					<td>{{row[2]}}</td>
+                </td>
+              </tr>
+            {% endfor %}
+			</tbody>
+		</table>
+	<button id="addb" class="button1" onclick="displayForm()"><i class="fa-solid fa-user-plus" style="color: #5b0085;"></i>&emsp; Add new Group</button>
+	<div style = "visibility: hidden;">
+		<form  id="form1" method="post" action="addgroup" target = "_parent" ><br><br>
+			<input type="text" class="inp" name="column1" placeholder="Enter name of group">
+			<input type="text" class="inp" name="column2" placeholder="Enter number of members">
+			<input type="text" class="inp" name="column3" placeholder="Enter names of members">
+			<br></br>
+			
+			<button type="submit" class="button2">Enter</button>
+			
+		</form>
+		
+			</div>
+		</form>
+		<div class="main" id="section5">
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>
+
+<script src="{{ url_for('static', filename='/friends.js') }}"></script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <script src="https://kit.fontawesome.com/6cfb2cc004.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/expense.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="navbar">
+        <a href="{{url_for('account')}}" id="pla" align="right"><i class="fa-solid fa-user"></i><span
+                class="small">Account</span></a>
+        <a href="{{url_for('groups')}}" id="pla" align="right"><i class="fa-solid fa-user-group"></i><span
+                class="small">Groups</span></a>
+        <a href="{{url_for('friends')}}" id="pla" align="right"><i class="fa-solid fa-people-arrows"></i><span
+                class="small"> Friends</span></a>
+        <a href="{{url_for('expense')}}" id="pla" align="right" style="color:#ada7ef"><i
+                class="fa-solid fa-receipt"></i><span class="small"> Add Expense</span></a>
+        <a href="{{url_for('home')}}" id="pla" align="right"><i class="fa-solid fa-house"></i><span class="small">
+                Home</span></a>
+
+    </div>
+    <div class="container">
+        <h1>Add Expense</h1>
+        <form method="post" action="addfriend" target="_parent" onsubmit="submitForm(event)">
+            <label for="name" style="margin-bottom: 0px;">With you and:</label>
+            <button type="button" id="addg" class="button1" onmouseover="displayGroups()"
+                onmouseout="hideGroups()">Groups:</button>
+            <div id="form1" onmouseover="displayGroups()" onmouseout="hideGroups()" style="display: none;">
+                <table>
+                    <tbody>
+                        {% for row in groups %}
+                        <tr id="grp" onclick="selectGrp(event)" data-value={{row[0]}}>
+                            <td><i class="fa-solid fa-hand-holding-dollar fa-lg"></i></td>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[1]}}</td>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <button id="addf" type="button" class="button1" onmouseover="displayFriends()"
+                onmouseout="hideFriends()">Friends:</button>
+            <div id="form2" onmouseover="displayFriends()" onmouseout="hideFriends()" style="display: none;">
+                <table>
+                    {% for row in friends %}
+                    <tbody>
+                        <tr data-value={{row[0]}} id="sel" onclick="selectPerson(event)">
+                            <td><i class="fa-solid fa-hand-holding-dollar fa-lg"></i></td>
+                            <td>{{row[0]}}</td>
+                            <p type="hidden"> {{ row[0] }}</p>
+                            <td>{{row[1]}}</td>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+            </div>
+            <input id="name" type="hidden" name="name">
+            <label for="description">Description:</label>
+            <input type="text" id="desc" name="desc" placeholder="Enter description">
+
+
+            <label for="amt">Amount:</label>
+            <input type="text" id="email" name="amt" placeholder="Enter amount">
+
+            <!-- <label for="equality" style="margin-bottom: 0px;">Split it :</label> -->
+            <!-- <button id="equally" type="button" class="button1" onclick="fn()">Equally</button> -->
+            <!-- <div> -->
+            <!-- <button id="addTextBoxButton" onclick="addTextBox()">Add Textbox</button> -->
+            <button id="addTextBoxButton" type="button" class="button1" onclick="addTextBox()">Split Unequally</button>
+            <br>
+            <input type="text" id="textBox" name="entries" style="display: none;">
+            <!-- </div> -->
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+<script src="{{ url_for('static', filename='/expense.js') }}"></script>
+
+</html>

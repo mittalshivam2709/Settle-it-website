@@ -1,0 +1,273 @@
+
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+#clouds{
+    overflow: hidden;
+	padding: 100px 0;
+	background: #dea2fe;
+	background: -webkit-linear-gradient(top, #dea2fe 0%, #fff 100%);
+	background: -linear-gradient(top, #dea2fe 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #dea2fe 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+.small{
+    margin-top: 0.5%;
+    margin-left: 1%;
+    font-size: 10px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width:101%;
+    margin-left: -1%;
+    z-index: 1;
+  }
+  .navbar a {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    float:right;
+    display:block;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: none;
+    font-size: 15px;
+    font-family: Verdana;
+    height: 30px;
+    top: 0;
+    z-index: 1;
+  }
+
+  .navbar a:hover{
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  
+.btn1{
+    margin-top: 1%;
+    margin-bottom: 0%;
+    background-color:#00000000;
+    border-color: #39037f;
+    color: #000000;
+    font-size: large;
+    height:10%;
+    width:10%;
+    padding: 1%;
+    margin-left: 10%;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+.btn1:hover{
+    background-color: #bc8bf100;
+    color: rgb(0, 0, 0);
+    transform: rotateY(25deg);  
+    transform: rotateY(0deg) scale(1.25);
+}
+
+.btn2{
+    margin-top: 1%;
+    margin-bottom: 0%;
+    background-color:#ffffff;
+    border-color: #39037f;
+    color: #000000;
+    font-size: large;
+    height:10%;
+    width:10%;
+    padding: 1%;
+    margin-left: 10%;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+.btn2:hover{
+    background-color: #bc8bf100;
+    color: rgb(0, 0, 0);
+    transform: rotateY(25deg);  
+    transform: rotateY(0deg) scale(1.25);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+	margin-left: 2%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+    color: #000000;
+	box-shadow: 5px 5px 5px 5px rgba(183, 132, 217, 0.537);
+}
+
+input[type="submit"] {
+	background-color: #002B5B;
+	color: #000000;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #BFACE2;
+}
+@keyframes para {
+	100% {
+		background-position: 
+			-5000px 20%,
+			-800px 95%,
+			500px 50%,
+			1000px 100%,
+			400px 0;
+		}
+	}
+    h3{
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+
+
+#section5 {
+    margin-top: -20%;
+    height: 300px;
+    background-color: #ccaaf200;
+	background-image:		
+		url('trans.png'),
+        url('mount.png'),
+		url('trees.png');
+	background-repeat: repeat-x;
+	background-position: 
+		0 20%,
+		0 100%,
+		0 50%,
+		0 100%,
+		0 0;
+	background-size: 
+		2500px,
+		800px,
+		500px 200px,
+		1000px,
+		400px 260px;
+	animation: 50s para infinite linear;
+  }
+

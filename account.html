@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/6cfb2cc004.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/account.css') }}">
+</head>
+<body >
+    
+	<div class="navbar"  style="z-index: 5;">
+		<a href="{{url_for('account')}}" id="pla" align="right"  style="color:#ada7ef"><i class="fa-solid fa-user" ></i><span class="small">Account</span></a>
+		<a href="{{url_for('groups')}}" id="pla" align="right"><i class="fa-solid fa-user-group"></i><span class="small">Groups</span></a>
+		<a href="{{url_for('friends')}}" id="pla" align="right" ><i class="fa-solid fa-people-arrows"></i><span class="small"> Friends</span></a>
+		<a href="{{url_for('expense')}}" id="pla" align="right"><i class="fa-solid fa-receipt"></i><span class="small">  Add Expense</span></a>
+		<a href="{{url_for('home')}}" id="pla" align="right" ><i class="fa-solid fa-house"></i><span class="small"> Home</span></a>	
+		</div>
+        <div id="clouds" style="z-index: -1;">
+            <div class="cloud x1"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+        <div class="container" style="margin-top: 0%; z-index: 1; margin-left: 20%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <h1 style="color:#7e11c6">Your Account</h1>
+            <p>Name: {{name}}</p>
+            <p>Email: {{email}}</p>
+            <p style="margin-bottom: 0%;">Password: {{pw}}</p>
+            <form  id="form2" method="post" action="tohome" target = "_parent" ><br><br>
+                <button class="btn1"  id="home"  type="submit" style="margin-top: -50%; margin-left: 2%;">Home</button>
+        
+            </form>
+            <i class="fa-solid fa-pen" style="color: #7e11c6;"></i>
+            <button class="btn1" onclick="display()">Edit</button>
+            <div style = "visibility: hidden;">
+                <form  id="form1" method="post" action="edit" target = "_parent" ><br><br>
+                    <input type="text" id="edit" class="inp" name="column1" placehold="Enter new name">
+                    <input type="email"n id="edit"   class="inp" name="column2" placehold="Enter new email">
+                    <input type="password"  id="edit"   class="inp" name="column3" placehold="Enter new password">
+                    <button class="btn2"  id="edit"  type="submit">Submit</button>
+   
+                </form>
+            </div>
+ 
+           
+
+          
+    
+     </div>
+    </div>
+    <div class="main" id="section5">
+    </div>
+
+    <script src="{{ url_for('static', filename='/account.js') }}"></script>
+
+</body>
+</html>
